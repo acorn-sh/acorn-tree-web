@@ -1,0 +1,58 @@
+<%- include('../layout', { 
+    title: 'Acorn SH - Registration Form', 
+    description: 'Register for Acorn SH Services', 
+    content: `
+    <main class="container">
+        <center>
+            <!-- Registration Form Section -->
+            <section class="content">
+                <article class="article-content">
+                    <div class="article-text">
+                        <h1></h1>
+                        <form class="registration-form" action="/register" method="POST">
+                            <!-- Group: Email, ID, Password -->
+                            <div class="form-group">
+                                <h3>Registration Information</h3>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email" />
+
+                                <input type="text" id="userID" name="userID" required placeholder="Enter your user ID" />
+
+                                <input type="password" id="password" name="password" required placeholder="Enter your password" />
+                                <input type="password" id="password" name="password" required placeholder="Confirm your password" />
+                            </div>
+
+                            <!-- Group: Country Selection -->
+                            <div class="form-group">
+                                <select id="country" name="country" required>
+                                    <option value="" disabled selected>Select your country</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="UK">UK</option>
+                                    <option value="Germany">Germany</option>
+                                    <!-- Add more countries as needed -->
+                                </select>
+                            </div>
+
+                            <!-- Group: Optional Fields (Social Media, GitHub) -->
+                            <div class="form-group optional-fields">
+                                <h3>Optional Information</h3>
+
+                                <input type="text" id="twitter" name="twitter" placeholder="Enter your Twitter handle" />
+
+                                <input type="text" id="instagram" name="instagram" placeholder="Enter your Instagram handle" />
+
+                                <input type="text" id="github" name="github" placeholder="Link to your GitHub repo (optional)" />
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group">
+                                <button type="submit" class="register-button">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+            </section>
+        </center>
+    </main>
+    ` 
+}) %>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acorn Shell</title>
+    <link rel="stylesheet" href="test/styles.css">
+</head>
+<body>
+    <div class="center-container">
+        <!-- SVG containing the logo as a path -->
+        <svg id="mainSvgLogo" class="content" viewBox="0 0 800 300">
+            <!-- SVG Logo as a path -->
+            <path id="logoPath" d="M50,50 L150,50 L150,150 L50,150 Z" fill="none" stroke="yellow" stroke-width="2"/>
+        </svg>
+
+        <!-- SVG containing the text as a path -->
+        <svg id="mainSvgText" class="content" viewBox="0 0 800 300">
+            <!-- SVG Text Path for "Acorn Shell" -->
+            <path id="textPath" d="M200,200 Q300,100 500,200 T800,200" fill="none" stroke="white" stroke-width="2"/>
+        </svg>
+
+        <!-- SVG container for the wave contour -->
+        <svg id="waveContainer" class="wave-container"></svg>
+    </div>
+
+    <script src="test/app.js"></script>
+</body>
+</html>

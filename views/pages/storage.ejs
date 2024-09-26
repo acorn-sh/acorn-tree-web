@@ -1,0 +1,71 @@
+<%- include('../layout', { 
+    title: 'Acorn SH - File Uploads', 
+    description: 'Search and upload files on Acorn SH', 
+    content: `
+    <link rel="stylesheet" href="/css/inner-styles.css">
+
+    <main class="file-upload-overview">
+        <h1>File Storage</h1>
+        <!-- Search and File Upload Section -->
+        <div class="file-action-grid">
+            <!-- Search bar -->
+            <div class="network-card file-card">
+                <div class="network-header">
+                    <h2>Search Files</h2>
+                </div>
+                <div class="network-link">
+                    <form enctype="multipart/form-data" action="/search" method="post" class="upload-form">
+                        <input type="text" placeholder="Search for files..." class="file-search-input">
+                        <button class="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!-- File Upload Section -->
+            <div class="network-card file-card">
+                <div class="network-header">
+                    <h2>Upload New File</h2>
+                </div>
+                <div class="network-link">
+                    <form enctype="multipart/form-data" action="/upload" method="post" class="upload-form">
+                        <input type="file" name="file" class="file-input" accept=".torrent, .zip, .rar, .tar, .7z">
+                        <button type="submit" class="upload-btn">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Uploaded Files Table -->
+        <h1>My Uploaded Files</h1>
+        <table class="file-table">
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>Hash</th>
+                    <th>Size</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Project Document.zip</td>
+                    <td>hashhashhash</td>
+                    <td>2.5 MB</td>
+                    <td>
+                        <button class="download-btn">Download</button>
+                        <button class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sample Video.torrent</td>
+                    <td>hashhashhash</td>
+                    <td>750 MB</td>
+                    <td>
+                        <button class="download-btn">Download</button>
+                        <button class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    ` 
+}) %>
