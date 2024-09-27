@@ -23,17 +23,14 @@ app.use('/pages', pagesRoutes);
 
 // 404 Error Handling
 app.use((req, res) => {
-    res.status(404).render('404', { title: 'Page Not Found' });
+  res.status(404).render('404', { title: 'Page Not Found' });
 });
 
 // General error handling
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).render('500', { title: 'Server Error' });
+  console.error(err.stack);
+  res.status(500).render('500', { title: 'Server Error' });
 });
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// **Export the app instance**
+module.exports = app;
