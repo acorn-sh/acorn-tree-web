@@ -10,8 +10,8 @@ router.get('/login', (req, res) => {
 });
 
 // Route for the projects page
-router.get('/projects', (req, res) => {
-    res.render('pages/projects', { 
+router.get('/hosting', (req, res) => {
+    res.render('pages/hosting', { 
         title: 'Acorn SH - My Projects', 
         description: 'View and manage your projects on Acorn SH'
     });

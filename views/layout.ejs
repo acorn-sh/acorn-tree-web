@@ -14,19 +14,17 @@
 </head>
 <body>
     <center>
-        <form action="/search">
-            <!-- Include the header -->
-            <%- include('partials/header') %>
+        <!-- Include the header -->
+        <%- include('partials/header') %>
 
-            <!-- Main Content: Left and Right Columns -->
-            <div class="content">
-                <!-- Main content section -->
-                <div class="main-content">
-                    <%- content %> <!-- This is where the dynamic content like articles is injected -->
-                </div>
-
+        <!-- Main Content: Left and Right Columns -->
+        <div class="content">
+            <!-- Main content section -->
+            <div class="main-content">
+                <%- content %> <!-- This is where the dynamic content like articles is injected -->
             </div>
-        </form>
+
+        </div>
     </center>
 
     <!-- Include the footer -->
