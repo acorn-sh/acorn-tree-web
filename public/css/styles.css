@@ -1,10 +1,10 @@
 /* Global Styles */
 html, body {
-    height: 100%; /* Full height for both HTML and body */
+    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
 }
 
 body {
@@ -13,25 +13,29 @@ body {
     background-color: #f8f7f5;
     color: #000000;
     text-align: center;
-    flex: 1; /* Allow body to take available space */
+    flex: 1;
+    overflow-y: scroll;
+}
+
+/* Font Variants */
+.linden-hill-regular, .linden-hill-regular-italic {
+    font-family: "Linden Hill", system-ui;
 }
 
 .linden-hill-regular {
-    font-family: "Linden Hill", system-ui;
     font-weight: 400;
     font-style: normal;
 }
 
 .linden-hill-regular-italic {
-    font-family: "Linden Hill", system-ui;
     font-weight: 400;
     font-style: italic;
 }
 
 /* Text Styles */
-p {
+p, ul {
     margin: 0;
-    text-align: justify; /* Justified text for clean look */
+    text-align: justify;
 }
 
 a {
@@ -60,9 +64,9 @@ hr {
 }
 
 .line {
-    width: 640px;   /* Line width */
-    height: 1px;    /* Line height */
-    background-color: #fdd401;  /* Line color */
+    width: 640px;
+    height: 1px;
+    background-color: #fdd401;
 }
 
 /* Input Fields and Buttons */
@@ -84,40 +88,42 @@ input[type="submit"]:hover {
     background-color: #f0f0f0;
 }
 
-.import-btn {
-    margin-right: 5px; /* Add space between buttons */
+.simple-btn {
+    margin-right: 5px;
     padding: 5px;
-    background-color: #fdd401;
+    background-color: #ddd;
     border: none;
     cursor: pointer;
     font-size: 14px;
+    width: auto;
+    display: inline-block;
 }
 
-.import-btn:hover {
-    background-color: #ddd;
+.simple-btn:hover {
+    background-color: #fdd401;
 }
 
 /* Page Layout - Content Structure */
 .content {
-    font-family: "Linden Hill", serif;
     display: flex;
     justify-content: space-between;
     width: 640px;
     margin: 5px;
     padding: 5px;
-    flex: 1; /* Allows content to expand to fill available space */
+    flex: 1;
+}
+
+.center-monocolumn, .left-twocolumn, .right-twocolumn {
+    text-align: left;
+    font-size: 14px;
 }
 
 .center-monocolumn {
     width: 640px;
-    text-align: left;
-    font-size: 14px;
 }
 
 .left-twocolumn {
     width: 420px;
-    text-align: left;
-    font-size: 14px;
 }
 
 .right-twocolumn {
@@ -144,35 +150,40 @@ input[type="submit"]:hover {
 }
 
 .links-section p {
-    margin: 0;
     font-size: 14px;
 }
 
 /* Content Cards and Grids */
 .content-min {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin: 5px;
     padding: 5px;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 10px; /* Space between cards */
 }
 
 .content-min-card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 10px;
     background-color: #fff;
-    height: 200px; /* Set a fixed height or min-height for alignment */
+    border: 1px solid #c5c5c5;
+    height: 200px;
+    overflow: hidden;
+}
+
+.content-min-card:hover {
+    border: 1px solid #fdd401;
 }
 
 .content-min-card-title {
     font-weight: bold;
-    margin-bottom: 5px; /* Space between title and content */
 }
 
 .content-min-card-info {
-    margin-top: auto; /* Pushes content to the bottom */
-    text-align: left; /* Left-align text inside card */
+    margin-top: auto;
+    text-align: left;
 }
 
 /* Focus Section */
@@ -195,14 +206,13 @@ input[type="submit"]:hover {
 }
 
 .tab button {
-    background-color: inherit;
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 5px;
-    transition: 0.3s;
     background-color: #fdd401;
+    transition: 0.3s;
 }
 
 .tab button:hover {
@@ -235,14 +245,25 @@ input[type="submit"]:hover {
     border: 1px solid #fdd401;
 }
 
-.section-title {
-    background-color: #fdd401;
+.bordered-section-gray {
+    border: 1px solid #c5c5c5;
+}
+
+.section-title, .section-title-gray {
     padding: 5px;
     font-weight: bold;
     font-size: 14px;
     width: 100%;
     text-align: left;
     box-sizing: border-box;
+}
+
+.section-title {
+    background-color: #fdd401;
+}
+
+.section-title-gray {
+    background-color: #c5c5c5;
 }
 
 .section-title-text {
@@ -252,21 +273,18 @@ input[type="submit"]:hover {
 /* Lists */
 ul {
     list-style: none;
-    margin: 0;
     padding: 0;
 }
 
 ul li {
     font-size: 14px;
     margin-bottom: 5px;
-    margin: 0;
 }
 
 /* Right Column Text Alignment */
 .right-column p {
     text-align: right;
     margin-top: 10px;
-    margin-bottom: 0;
 }
 
 /* Article Content */
@@ -276,34 +294,33 @@ ul li {
     height: 800px;
 }
 
+.article-image-left img, .article-image-right img {
+    border-radius: 5px;
+}
+
 .article-image-left img {
     float: left;
     margin: 10px 10px 10px 0;
-    border-radius: 5px;
 }
 
 .article-image-right img {
     float: right;
     margin: 10px 0 10px 10px;
-    border-radius: 5px;
 }
 
 /* Registration Form */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
-    width: 270px;  /* Set a consistent width */
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 270px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;  /* Ensure padding doesn't affect width */
+    box-sizing: border-box;
     font-size: 14px;
 }
 
 button.register-button {
-    width: 270px;  /* Set button width to match other form fields */
+    width: 270px;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #fdd401;
     color: white;
     border: none;
     border-radius: 5px;
@@ -311,14 +328,14 @@ button.register-button {
 }
 
 button.register-button:hover {
-    background-color: #45a049;
+    background-color: #fdd401;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    width: 270px;  /* Match width to input fields */
+    width: 270px;
 }
 
 .registration-form {
@@ -335,7 +352,7 @@ label {
 .optional-fields h3 {
     margin-top: 30px;
     font-size: 1.2em;
-    width: 350px;  /* Match width to input fields */
+    width: 350px;
 }
 
 /* Footer */
@@ -345,5 +362,5 @@ label {
     text-align: center;
     font-size: 12px;
     width: 100%;
-    margin-top: auto; /* Pushes footer to the bottom */
+    margin-top: auto;
 }
