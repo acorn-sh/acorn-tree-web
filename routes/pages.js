@@ -18,8 +18,8 @@ router.get('/hosting', (req, res) => {
 });
 
 // Route for the networks project page
-router.get('/networks', (req, res) => {
-    res.render('pages/networks', { 
+router.get('/rpcs', (req, res) => {
+    res.render('pages/rpcs', { 
         title: 'Acorn SH - networks', 
         description: 'Start a new project with Acorn SH'
     });
