@@ -17,6 +17,10 @@ body {
     overflow-y: scroll;
 }
 
+.night {
+    background-color: #1e186b
+}
+
 /* Font Variants */
 .linden-hill-regular, .linden-hill-regular-italic {
     font-family: "Linden Hill", system-ui;
