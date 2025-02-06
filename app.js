@@ -1,6 +1,14 @@
 const express = require('express');
 const path = require('path');
+const { Pool } = require('pg');
+
 const app = express();
+
+// Database connection
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
+});
 
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));

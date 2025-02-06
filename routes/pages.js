@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 // Route for the registration page
-router.get('/login', (req, res) => {
-    res.render('pages/registration', { 
+router.get('/members', (req, res) => {
+    res.render('pages/members', { 
         title: 'Acorn SH - Account', 
         description: 'Create your account for Acorn SH services'
     });
