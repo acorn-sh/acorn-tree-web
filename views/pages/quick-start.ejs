@@ -1,7 +1,10 @@
+<%# pages/quick-start.ejs %>
+
 <%- include('../layout', { 
     title: 'Acorn SH - Deploy New Project', 
     description: 'Start a new project by importing a repository or selecting a template', 
-    content: `
+    body: `
+
     <link rel="stylesheet" href="/css/inner-styles.css">
 
     <main class="new-project-page">
@@ -9,10 +12,10 @@
         <p>Multi platform easy to use client. Please install docker and make sure it is running.</p>
         <br>
         <div class="new-project-options">
-            <img src="https://via.placeholder.com/640x150.png" width="640" height="150" alt="new">
+            <img src="https://placehold.co/640x150.png" width="640" height="150" alt="new">
 
         </div>
     </main>
-    ` 
-  }) %>
-  
+
+    `
+}) %>

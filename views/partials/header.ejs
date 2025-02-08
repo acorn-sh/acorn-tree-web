@@ -1,4 +1,4 @@
-<% // partials/header.ejs %>
+<%# // partials/header.ejs %>
 
 <!-- Logo and Header -->
 <a href="/"><img width="640" height="75" src="/images/header-logo.gif" alt="Acorn SH Logo"></a>
@@ -9,10 +9,15 @@
         <a href="../pages/download-page" target="_blank"><img src="/images/new.gif" height="11" width="56" alt="new"><b>acorn sh app</b></a><br>macOS, Windows, Linux
     </div>
     <div class="info-item">
-        <a href="#"><img width="230" height="33" src="/images/message.png" alt="Download"></a>
+        <a href="#"><img width="211" src="/images/message.png" alt="Download"></a>
     </div>
     <div class="info-item">
-        <a href="/pages/login"><b>log in/sign up</b></a><br>members only
+        <% if (user) { %>
+            <a href="/pages/account"><b>my account</b></a> · <a href="/auth/logout"><b>logout</b></a>
+            <br>members only
+        <% } else { %>
+            <a href="/pages/members"><b>log in/sign up</b></a><br>members only
+        <% } %>
     </div>
 </div>
 
@@ -23,5 +28,5 @@
 </div>
 
 <div class="links-section">
-    <small><b>Quick links:</b> · <a href="/pages/quick-start" target="_blank">Quickstart</a> · <a href="/pages/tutorials" target="_blank">Tutorials</a> · <a href="/files/Acorn_Validator.pdf" target="_blank">Whitepaper</a> · <a href="/pages/careers" target="_blank">Careers</a> · </small>
+    <small><b>Quick links:</b> <a href="/files/Acorn_Validator.pdf" target="_blank">Whitepaper</a> · <a href="/pages/careers" target="_blank">Careers</a> · </small>
 </div>

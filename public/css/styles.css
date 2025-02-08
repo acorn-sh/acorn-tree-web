@@ -9,9 +9,9 @@ html, body {
 
 body {
     font-family: "Linden Hill", serif;
-    font-size: 18px;
+    font-size: 16px;
     background-color: #f8f7f5;
-    color: #000000;
+    color: #000;
     text-align: center;
     flex: 1;
     overflow-y: scroll;
@@ -21,26 +21,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; /* Full viewport height */
+    height: 80vh;
     text-align: center;
 }
 
 .night {
-    background-color: #1e186b
+    background-color: #1e186b;
 }
 
 /* Font Variants */
 .linden-hill-regular, .linden-hill-regular-italic {
     font-family: "Linden Hill", system-ui;
+    font-weight: 400;
 }
 
 .linden-hill-regular {
-    font-weight: 400;
     font-style: normal;
 }
 
 .linden-hill-regular-italic {
-    font-weight: 400;
     font-style: italic;
 }
 
@@ -51,7 +50,7 @@ p, ul {
 }
 
 a {
-    color: #0000FF;
+    color: #00f;
     text-decoration: none;
 }
 
@@ -81,23 +80,74 @@ hr {
     background-color: #fdd401;
 }
 
+.line-left-twocolumn {
+    width: 420px;
+    height: 1px;
+    background-color: #fdd401;
+}
+
 /* Input Fields and Buttons */
-input[type="text"] {
-    padding: 3px;
-    font-size: 14px;
-    width: 300px;
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 input[type="submit"] {
     padding: 3px 8px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
+    background-color: #fff;
+    border: 1px solid #000;
     font-size: 14px;
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
-    background-color: #f0f0f0;
+.register-button {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #fdd401;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, .register-button:hover, .simple-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-field input {
+    padding-right: 40px; /* Add space for the icon */
+}
+
+.password-field .password-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-field .password-button:focus {
+    outline: none;
+}
+
+.password-field .password-button .fa-eye {
+    pointer-events: none;
 }
 
 .simple-btn {
@@ -107,12 +157,7 @@ input[type="submit"]:hover {
     border: none;
     cursor: pointer;
     font-size: 14px;
-    width: auto;
     display: inline-block;
-}
-
-.simple-btn:hover {
-    background-color: #fdd401;
 }
 
 /* Page Layout - Content Structure */
@@ -125,22 +170,20 @@ input[type="submit"]:hover {
     flex: 1;
 }
 
-.center-monocolumn, .left-twocolumn, .right-twocolumn {
-    text-align: left;
-    font-size: 14px;
-}
-
 .center-monocolumn {
-    width: 640px;
+    max-width: 640px;
+    text-align: center;
 }
 
 .left-twocolumn {
     width: 420px;
+    text-align: left;
 }
 
 .right-twocolumn {
     width: 200px;
     text-align: justify;
+    font-size: 14px;
 }
 
 /* Sections: Info, Search, Links */
@@ -166,21 +209,7 @@ input[type="submit"]:hover {
 }
 
 /* Content Cards and Grids */
-.content-min-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 5px;
-    padding: 5px;
-}
 
-.content-min-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 5px;
-    padding: 5px;
-}
 .content-min-card {
     display: flex;
     flex-direction: column;
@@ -205,18 +234,54 @@ input[type="submit"]:hover {
     text-align: left;
 }
 
+.content-min-2, .focus-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.content-min-2, .focus-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.content-min-card-2 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #c5c5c5;
+    height: 250px;
+    overflow: hidden;
+}
+
+.content-min-card-2:hover {
+    border: 1px solid #fdd401;
+}
+
+.content-min-card-2-title {
+    font-weight: bold;
+}
+
+.content-min-card-2-info {
+    text-align: left;
+}
+
+.content-min-3, .focus-grid {
+    display: grid;
+    gap: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.content-min-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 /* Focus Section */
 .focus-section {
     border: 1px solid #fdd401;
-    padding: 5px;
     margin-bottom: 20px;
-}
-
-.focus-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 10px;
+    padding: 6px 12px;
 }
 
 /* Tabs */
@@ -260,12 +325,13 @@ input[type="submit"]:hover {
 }
 
 /* Bordered Sections and Titles */
-.bordered-section {
+.bordered-section, .bordered-section-gray {
     border: 1px solid #fdd401;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .bordered-section-gray {
-    border: 1px solid #c5c5c5;
+    border-color: #c5c5c5;
 }
 
 .section-title, .section-title-gray {
@@ -275,9 +341,6 @@ input[type="submit"]:hover {
     width: 100%;
     text-align: left;
     box-sizing: border-box;
-}
-
-.section-title {
     background-color: #fdd401;
 }
 
@@ -328,50 +391,34 @@ ul li {
 }
 
 /* Registration Form */
-input[type="text"], input[type="email"], input[type="password"], select {
-    width: 270px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-button.register-button {
-    width: 270px;
-    padding: 10px 20px;
-    background-color: #fdd401;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button.register-button:hover {
-    background-color: #fdd401;
-}
-
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    width: 270px;
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
 }
 
 .registration-form {
-    width: 100%;
-    max-width: 600px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
     margin-bottom: 20px;
-}
-
-/* Optional Information Section */
-.optional-fields h3 {
-    margin-top: 30px;
-    font-size: 1.2em;
-    width: 350px;
+    position: relative;
 }
 
 /* Footer */
