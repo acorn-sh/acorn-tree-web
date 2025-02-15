@@ -87,7 +87,7 @@ hr {
 }
 
 /* Input Fields and Buttons */
-input[type="text"], input[type="email"], input[type="password"], select {
+input[type="email"], input[type="password"], select {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
@@ -96,12 +96,109 @@ input[type="text"], input[type="email"], input[type="password"], select {
     box-sizing: border-box;
 }
 
+input[type="search"], select {
+    padding: 3px 8px;
+    width: 300px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 input[type="submit"] {
     padding: 3px 8px;
     background-color: #fff;
     border: 1px solid #000;
-    font-size: 14px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+input[type="submit"]:hover, .register-button:hover, .simple-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.search-bar {
+    margin: 10px;
+
+}
+
+/* Table */
+table {
+    font-size: 14px;
+    border-spacing: 1px;
+    margin: 15px 0;
+    white-space: nowrap;
+    width: 100%;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 2px;
+    border: 1px solid #c5c5c5;
+
+}
+
+thead {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+tbody {
+    background-color: #fff;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    padding: 2px;
+    text-align: left;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    
+    /* Positioning */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Hide by default */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Status Indicators */
+.online { color: green; }
+.joining { color: orange; }
+.unreachable { color: red; }
+.offline { color: gray; }
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    table {
+        font-size: 12px;
+    }
 }
 
 .register-button {
@@ -112,10 +209,6 @@ input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-input[type="submit"]:hover, .register-button:hover, .simple-btn:hover {
-    background-color: #e0e0e0;
 }
 
 .password-field {
@@ -200,10 +293,6 @@ input[type="submit"]:hover, .register-button:hover, .simple-btn:hover {
     font-size: 14px;
 }
 
-.search-bar {
-    margin: 10px;
-}
-
 .links-section p {
     font-size: 14px;
 }
@@ -280,6 +369,7 @@ input[type="submit"]:hover, .register-button:hover, .simple-btn:hover {
 /* Focus Section */
 .focus-section {
     border: 1px solid #fdd401;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 6px 12px;
 }
@@ -295,7 +385,7 @@ input[type="submit"]:hover, .register-button:hover, .simple-btn:hover {
     outline: none;
     cursor: pointer;
     padding: 5px;
-    background-color: #fdd401;
+    background-color: #ccc;
     transition: 0.3s;
 }
 
@@ -304,7 +394,7 @@ input[type="submit"]:hover, .register-button:hover, .simple-btn:hover {
 }
 
 .tab button.active {
-    background-color: #ccc;
+    background-color: #fdd401;
 }
 
 .tabcontent {
